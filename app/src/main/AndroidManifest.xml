@@ -3,7 +3,7 @@
     package="com.codepath.hw1photoviewer" >
 
 
-    <uses-permission android:name="android.permission.internet" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
