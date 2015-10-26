@@ -2,27 +2,67 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
-    <ImageView
-        android:layout_width="match_parent"
+    <EditText
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/ivPhoto"
+        android:layout_marginTop="10dp"
+        android:id="@+id/tvCaption"
+        android:text="Caption"
+        android:textSize="20sp"
+        android:minLines="1"
+        android:ellipsize="end"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/ivPhoto"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
-        android:minHeight="50dp" />
+        android:minHeight="50dp"
+        android:layout_below="@+id/tvCaption"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tvCaption"
+        android:id="@+id/tvAuthor"
+        android:text="Author"
+        android:ellipsize="end"
+        android:minLines="1"
+        android:textSize="15sp"
         android:layout_below="@+id/ivPhoto"
+        android:layout_toRightOf="@+id/tvCaption"
+        android:layout_toEndOf="@+id/tvCaption" />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/ivAuthor"
+        android:layout_below="@+id/ivPhoto"
+        android:layout_alignBottom="@+id/tvAuthor"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:text="New Test"
-        android:textSize="20sp"
-        android:minLines="3"
-        android:ellipsize="end" />
+        android:layout_toStartOf="@+id/tvAuthor"
+        android:layout_toLeftOf="@id/tvAuthor"
+        android:adjustViewBounds="false"
+        android:scaleType="fitXY"
+        android:maxWidth="20dp"
+        android:nestedScrollingEnabled="false" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvLikeCount"
+        android:layout_below="@+id/tvAuthor"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="Like Count" />
 
 </RelativeLayout>

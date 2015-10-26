@@ -45,6 +45,9 @@ public class InstagramPhotoAdapter extends ArrayAdapter<InstagramPhoto>
         // since convertView is using item_photo as template, so all attributes of item_photo should be listed below
         TextView tvCaption = (TextView) convertView.findViewById(R.id.tvCaption);
         ImageView ivPhoto = (ImageView) convertView.findViewById(R.id.ivPhoto);
+        TextView tvAuthor =  (TextView) convertView.findViewById(R.id.tvAuthor);
+        ImageView ivAuthor = (ImageView) convertView.findViewById(R.id.ivAuthor);
+        TextView tvLikeCount = (TextView) convertView.findViewById(R.id.tvLikeCount);
         //Insert the model into each of the view items
         //Insert caption
         tvCaption.setText(photo.caption);
@@ -52,6 +55,12 @@ public class InstagramPhotoAdapter extends ArrayAdapter<InstagramPhoto>
         ivPhoto.setImageResource(0);
         //insert the image to ivPhoto by using picasso
         Picasso.with(getContext()).load(photo.imageUrl).into(ivPhoto);
+        //insert author
+        tvAuthor.setText("Author: " + photo.username);
+        //insert author image
+        Picasso.with(getContext()).load(photo.userUrl).into(ivAuthor);
+        //insert Like Count
+        tvLikeCount.setText("Likes: " + photo.likesCount);
         //Return the created items as a view
         return convertView;
     }

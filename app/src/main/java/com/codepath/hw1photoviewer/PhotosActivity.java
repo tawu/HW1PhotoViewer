@@ -78,6 +78,8 @@ public class PhotosActivity extends ActionBarActivity {
                         InstagramPhoto photo = new InstagramPhoto();
                         //- Author Name: {"data" => [X] //array  => "user" => "username"}
                         photo.username = photoJSON.getJSONObject("user").getString("username");
+                        //- Author image: {"data" => [X] //array  => "user" => "profile_picture"}
+                        photo.userUrl = photoJSON.getJSONObject("user").getString("profile_picture");
                         //- Caption: {"data" => [X] //array  => "caption" => "text"}
                         photo.caption = photoJSON.getJSONObject("caption").getString("text");
                         //- Type: {"data" => [X] //array  => "type"}: "image" or "video"
